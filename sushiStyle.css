@@ -1,0 +1,119 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+.sushi-container {
+    position: relative;
+}
+
+.sushi {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.sushi:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.sushi::after {
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.shadow {
+    position: absolute;
+    width: 150px;
+    height: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.seaweed {
+    width: 150px;
+    height: 150px;
+    background-color: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rice {
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.salmon {
+    width: 70px;
+    height: 70px;
+    background-color: #ff704d;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.guacamole {
+    width: 40px;
+    height: 40px;
+    background-color: #7ac142;
+    border-radius: 50%;
+    position: absolute;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.bounce {
+    animation: bounce 0.6s ease;
+}
+
+@keyframes shadow-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(-50%);
+        width: 150px;
+    }
+
+    50% {
+        transform: translateY(15px) translateX(-50%);
+        width: 60px;
+    }
+}
+
+.bounce~.shadow {
+    animation: shadow-bounce 0.6s ease;
+}
